@@ -1,4 +1,4 @@
-name: owasp-zap
+name: sca
 
 on:
 #  push:
