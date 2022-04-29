@@ -22,11 +22,15 @@ jobs:
           project: 'NodeGoat'
           path: '.'
           format: 'HTML'    
-          args: >
-            --failOnCVSS 7
-            --enableRetired
+#          args: >
+#            --failOnCVSS 7
+#            --enableRetired
       - name: Upload Test results
         uses: actions/upload-artifact@master
         with:
            name: Depcheck report
            path: ${{github.workspace}}/reports
+  finish:
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    needs: [depchecktest]
