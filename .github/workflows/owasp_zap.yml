@@ -16,9 +16,9 @@ jobs:
         with:
           ref: main
       - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.3.0
+        uses: zaproxy/action-baseline@v0.6.1
         with:
-          #fail_action: false
+          fail_action: false
           token: ${{ secrets.GITHUB_TOKEN }}
           target: 'https://nodegoat.net/'
           rules_file_name: '.zap/rules.tsv'
